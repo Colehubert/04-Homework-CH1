@@ -42,13 +42,18 @@ answerList.append(currentChoice);
 }
 quizContainer.append(quizQuestion);
 quizContainer.append(answerList);
-currentQuestionIndex++;
+
 }
 function checkAnswer(event){
     var currentAnswer = event.target.textContent;
-console.log(currentAnswer);
+if(currentAnswer === questionArray[currentQuestionIndex].answer){
+    var correctAnswer = document.createElement("p");
+    correctAnswer.textContent = "you are correct";
+    timer.append(correctAnswer);
 
+}
 
+currentQuestionIndex++;
 }
 
 function startQuiz(){
