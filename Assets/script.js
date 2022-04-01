@@ -46,14 +46,18 @@ quizContainer.append(answerList);
 }
 function checkAnswer(event){
     var currentAnswer = event.target.textContent;
-if(currentAnswer === questionArray[currentQuestionIndex].answer){
     var correctAnswer = document.createElement("p");
+if(currentAnswer === questionArray[currentQuestionIndex].answer){
     correctAnswer.textContent = "you are correct";
+    timer.append(correctAnswer);
+} else{
+    correctAnswer.textContent = "Wrong!!!!!";
     timer.append(correctAnswer);
 
 }
-
+quizContainer.innerHTML ="";
 currentQuestionIndex++;
+generateQuestion();
 }
 
 function startQuiz(){
