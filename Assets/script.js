@@ -21,3 +21,12 @@ var questionArray = [
     answer: "New York FC"
 },
 ];
+
+
+var quizBtn = document.getElementById("quiz-button");
+var quizContainer = document.querySelector("#quiz-container");
+var timer = document.querySelector("#time");
+
+
+
+quizBtn.addEventListener("click", startQuiz);
