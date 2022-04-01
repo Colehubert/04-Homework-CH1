@@ -34,15 +34,26 @@ function generateQuestion(){
 var quizQuestion = document.createElement("p");
 quizQuestion.textcontent = questionsArray[currentQuestionIndex].question 
 var answerList = document.createElement("ol");
+
 for (var i =0; i <questionArray[currentQuestionIndex].choices.length; i++){
     var currentChoice = document.createElement("li");
     currentChoice.textContent = questionArray[currentQuestionIndex].choices[i];
-
+answerList.append(currentChoice);
 }
+quizContainer.append(quizQuestion);
+quizContainer.append(answerList);
+currentQuestionIndex++;
+}
+function checkAnswer(event){
+    var currentAnswer = event.target.textContent;
+console.log(currentAnswer);
+
+
 }
 
 function startQuiz(){
     generateQuestion();
+    timer.textContent = countdownTime;
 
 
 }
@@ -50,3 +61,4 @@ function startQuiz(){
 
 
 quizBtn.addEventListener("click", startQuiz);
+quizContainer.addEventListener("click", checkAnswer);
