@@ -26,6 +26,20 @@ var questionArray = [
 var quizBtn = document.getElementById("quiz-button");
 var quizContainer = document.querySelector("#quiz-container");
 var timer = document.querySelector("#time");
+var countdownTime = questionArray.length * 15;
+var currentQuestionIndex = 0;
+
+
+function generateQuestion(){
+var quizQuestion = document.createElement("p");
+quizQuestion.textcontent = questionsArray[currentQuestionIndex].question 
+}
+
+function startQuiz(){
+    generateQuestion();
+
+
+}
 
 
 
