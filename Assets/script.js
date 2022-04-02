@@ -27,10 +27,21 @@ var quizBtn = document.getElementById("quiz-button");
 var quizContainer = document.querySelector("#quiz-container");
 var timer = document.querySelector("#time");
 var countdownTime = questionArray.length * 15;
+var countdownInterval;
 var currentQuestionIndex = 0;
 
+function endgame() {
+    quizContainer.innerHTML = "Game Over Loser!!!";
+}
+function starttimer(){
+    countdownTime--;
+    timer.textContent = countdownTime;
+}
 
 function generateQuestion(){
+    if (currentQuestionIndex === questionArray.length){
+        endgame();
+    }
 var quizQuestion = document.createElement("p");
 quizQuestion.textcontent = questionsArray[currentQuestionIndex].question 
 var answerList = document.createElement("ol");
@@ -62,7 +73,7 @@ generateQuestion();
 
 function startQuiz(){
     generateQuestion();
-    timer.textContent = countdownTime;
+    countdownInterval =setInterval(starttimer, 500);
 
 
 }
