@@ -44,10 +44,12 @@ function generateQuestion(){
         endgame();
     }
 var quizQuestion = document.createElement("p");
-quizQuestion.textcontent = questionsArray[currentQuestionIndex].question 
+quizQuestion.textcontent = questionArray[currentQuestionIndex].question 
 var answerList = document.createElement("ol");
 
-for (var i =0; i <questionArray[currentQuestionIndex].choices.length; i++){
+for (var i = 0;
+     i < questionArray[currentQuestionIndex].choices.length;
+     i++){
     var currentChoice = document.createElement("li");
     currentChoice.textContent = questionArray[currentQuestionIndex].choices[i];
 answerList.append(currentChoice);
