@@ -32,6 +32,7 @@ var currentQuestionIndex = 0;
 
 function endgame() {
     quizContainer.innerHTML = "Game Over Loser!!!";
+    clearInterval(countdownInterval);
 }
 function starttimer(){
     countdownTime--;
@@ -63,6 +64,7 @@ if(currentAnswer === questionArray[currentQuestionIndex].answer){
     timer.append(correctAnswer);
 } else{
     correctAnswer.textContent = "Wrong!!!!!";
+    countdownTime -= 5;
     timer.append(correctAnswer);
 
 }
